@@ -1,0 +1,25 @@
+Ex12_SnortIDS.txt
+
+=============================
+Snort Commands Executed:
+-----------------------------
+snort -v
+snort -dve
+snort -c /etc/snort/snort.conf
+snort -r sample.pcap
+
+=============================
+Sample Rule (local.rules):
+-----------------------------
+alert icmp any any -> any any (msg:"ICMP Packet Detected"; sid:1000001; rev:1;)
+
+=============================
+Sample Output:
+-----------------------------
+[**] [1:1000001:1] ICMP Packet Detected [**]
+{ICMP} 192.168.1.2 -> 192.168.1.3
+
+=============================
+Result:
+-----------------------------
+Snort IDS successfully detected ICMP packets using our custom rule.
